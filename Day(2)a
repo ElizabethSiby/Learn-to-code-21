@@ -1,0 +1,25 @@
+//Write a C Program to perform all four basic Mathematical Operations on two numbers taken from user input.
+
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {float a,b;
+            int e,c,m;
+            float u;
+            scanf("%f",&a);
+            scanf("%f",&b);
+            c=a+b;
+            e=a-b;
+            m=a*b;
+            u=a/b;
+            printf("%d",c);
+            printf("\n%d",e);
+            printf("\n%d",m);
+            printf("\n%.2f",u);
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
