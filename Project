@@ -1,0 +1,63 @@
+//Program which allows the user to enter the details of employees  and also to display the details of an employee according to the employee number given by user
+#include <stdio.h>
+struct Emp
+{int empno;
+char name[26];
+char designation[16];
+int pay;
+}
+worker,sales_emp[10];
+
+void display(int a);
+void enter(int n);
+
+int main()
+{
+    int eno,i,n;
+    char ch;
+    printf("How many number of employee details do u want to enter?");
+    scanf("%d",&n);
+    enter(n);
+    printf("\nEnter employee whoose information is to be displayed:\n");
+    scanf("%d",&eno);
+    for(int i=1;i<=n;i++)
+    {
+        if(sales_emp[i].empno==eno)
+        {
+        display(i);
+        break;
+        }
+        else
+        { 
+            printf("\nThat employee doesnt exist");
+            
+        }
+    }
+    return 0;
+}
+
+void enter(int n) //function to enter the details of the employees
+{  
+    for(int i=0;i<n;i++)
+    {
+        printf("\nEmployee No:");
+        scanf("%d",&sales_emp[i].empno);
+        printf("\nEmployee Name:");
+        scanf("%s",sales_emp[i].name);
+        printf("\nEmployee Designation:");
+        scanf("%s",sales_emp[i].designation);
+        printf("Enter the pay:");
+        scanf("%d",&sales_emp[i].pay);
+        
+    }
+}
+void display(int a) //function to print the drtails of the employee chosen by the user
+{
+printf("Employee Data:\n");
+printf("Employee No:%d",sales_emp[a].empno);
+printf("\nName:");
+printf("%s",sales_emp[a].name);
+printf("\nDesignation:");
+printf("%s",sales_emp[a].designation);
+printf("\nPay:%d\n",sales_emp[a].pay);
+}
